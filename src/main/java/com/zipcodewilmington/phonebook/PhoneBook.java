@@ -13,11 +13,11 @@ public class PhoneBook {
     private final Map<String, List<String>> phonebook;
 
     public PhoneBook(Map<String, List<String>> map) {
-        this.phonebook = map;
+        this.phonebook = (Map<String, List<String>>) map;
     }
 
     public PhoneBook() {
-        this(new HashMap<>());
+        this(new LinkedHashMap<>());
     }
 
     public void add(String name, String phoneNumber) {
@@ -48,7 +48,7 @@ public class PhoneBook {
     }
 
     public List<String> getAllContactNames() {
-        phonebook.forEach((n,p) -> System.out.println(n + p));
+        //phonebook.forEach((n,p) -> System.out.println(n + p));
         List<String> answer = new ArrayList<>(phonebook.keySet());
         //System.out.println(Arrays.asList(answer));
         return answer;
